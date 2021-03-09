@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Character Sheet</title>
+        <link rel="stylesheet" href="Genesys-CharacterSheet.css">
+    </head>
+<body>
+        <!--Is the Sheet for the Player or GM?-->
+        <input type="radio" name="attr_gmdicepool" class="sheet-player" value="1" checked="checked" style="display:none">
+        <input type="radio" name="attr_gmdicepool" class="sheet-gm" value="2" style="display:none">
+
+        <input type="checkbox" name="attr_showskillhide" value="show" class="setting-check hideskills" />
+        <div class="settings-container">
+            <input class="sheet-settings-checkbox" type="checkbox" name="attr_show_settings" value="1" /><span></span>
+            <div class="sheet-settings">
+                <label>
+                    <input type="checkbox" name="attr_showskillhide" value="show" />
+                    <span data-i18n="showskillhide">Show Skill Hide Options</span>
+                </label>
+            </div>
+        </div>
+
+        <input type="checkbox" name="attr_hide-alchemy" value="1" class="setting-check hide-alchemy" />
+        <input type="checkbox" name="attr_hide-arcana" value="1" class="setting-check hide-arcana" />
+        <input type="checkbox" name="attr_hide-astrogation" value="1" class="setting-check hide-astrogation" />
+        <input type="checkbox" name="attr_hide-athletics" value="1" class="setting-check hide-athletics" />
+        <input type="checkbox" name="attr_hide-brawl" value="1" class="setting-check hide-brawl" />
+        <input type="checkbox" name="attr_hide-charm" value="1" class="setting-check hide-charm" />
+        <input type="checkbox" name="attr_hide-coercion" value="1" class="setting-check hide-coercion" />
+        <input type="checkbox" name="attr_hide-computers" value="1" class="setting-check hide-computers" />
+        <input type="checkbox" name="attr_hide-cool" value="1" class="setting-check hide-cool" />
+        <input type="checkbox" name="attr_hide-coordination" value="1" class="setting-check hide-coordination" />
+        <input type="checkbox" name="attr_hide-deception" value="1" class="setting-check hide-deception" />
+        <input type="checkbox" name="attr_hide-discipline" value="1" class="setting-check hide-discipline" />
+        <input type="checkbox" name="attr_hide-divine" value="1" class="setting-check hide-divine" />
+        <input type="checkbox" name="attr_hide-driving" value="1" class="setting-check hide-driving" />
+        <input type="checkbox" name="attr_hide-gunnery" value="1" class="setting-check hide-gunnery" />
+        <input type="checkbox" name="attr_hide-knowledge" value="1" class="setting-check hide-knowledge" />
+        <input type="checkbox" name="attr_hide-leadership" value="1" class="setting-check hide-leadership" />
+        <input type="checkbox" name="attr_hide-mechanics" value="1" class="setting-check hide-mechanics" />
+        <input type="checkbox" name="attr_hide-medicine" value="1" class="setting-check hide-medicine" />
+        <input type="checkbox" name="attr_hide-melee" value="1" class="setting-check hide-melee" />
+        <input type="checkbox" name="attr_hide-meleeheavy" value="1" class="setting-check hide-meleeheavy" />
+        <input type="checkbox" name="attr_hide-meleelight" value="1" class="setting-check hide-meleelight" />
+        <input type="checkbox" name="attr_hide-negotiation" value="1" class="setting-check hide-negotiation" />
+        <input type="checkbox" name="attr_hide-operating" value="1" class="setting-check hide-operating" />
+        <input type="checkbox" name="attr_hide-perception" value="1" class="setting-check hide-perception" />
+        <input type="checkbox" name="attr_hide-piloting" value="1" class="setting-check hide-piloting" />
+        <input type="checkbox" name="attr_hide-primal" value="1" class="setting-check hide-primal" />
+        <input type="checkbox" name="attr_hide-ranged" value="1" class="setting-check hide-ranged" />
+        <input type="checkbox" name="attr_hide-rangedheavy" value="1" class="setting-check hide-rangedheavy" />
+        <input type="checkbox" name="attr_hide-rangedlight" value="1" class="setting-check hide-rangedlight" />
+        <input type="checkbox" name="attr_hide-resilience" value="1" class="setting-check hide-resilience" />
+        <input type="checkbox" name="attr_hide-riding" value="1" class="setting-check hide-riding" />
+        <input type="checkbox" name="attr_hide-skulduggery" value="1" class="setting-check hide-skulduggery" />
+        <input type="checkbox" name="attr_hide-stealth" value="1" class="setting-check hide-stealth" />
+        <input type="checkbox" name="attr_hide-streetwise" value="1" class="setting-check hide-streetwise" />
+        <input type="checkbox" name="attr_hide-survival" value="1" class="setting-check hide-survival" />
+        <input type="checkbox" name="attr_hide-vigilance" value="1" class="setting-check hide-vigilance" />
+
+        <!--Character Sheet Header-->
+        <!--Player Sheet Tabs-->
+        <input type="radio" name="attr_pcgm" class="sheet-tab-new sheet-tab-character-sheet sheet-player-sheet sheet-hide" value="1" checked="checked" />
+
+        <div class="sheet-separator sheet-player-dice">
+            <input name="attr_Dice-Destiny-Pool" class="sheet-hide" value="1" style="width:148px;margin:-13px -20px 0 -132px" class="sheet-toggle sheet-top-section-toggle" type="checkbox" checked="checked" /><span></span>
+            <div class="sheet-top-section">
+                <div class="sheet-row">
+                    <h3 class="sheet-section-header" data-i18n="dicepool">Dice Pool</h3>
+                    <input style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-dice-section-toggle" type="checkbox" checked="checked" />
+                    <div class="sheet-dice-section">
+                        <table class="sheet-dice-pool" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="sheet-light"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/dice/blue/blank.png" /><input name="attr_b" type="number" step="1" max="9" min="0" value="0"></td>
+                                    <td class="sheet-light"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/dice/green/blank.png" /><input name="attr_g" type="number" step="1" max="9" min="0" value="0"></td>
+                                    <td class="sheet-light"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/dice/yellow/blank.png" /><input name="attr_y" type="number" step="1" max="9" min="0" value="0"></td>
+                                    <td class="sheet-force"><button type='roll' name='roll_DicePool' value='!eed characterID(@{character_id}) label(Dice:Dice Pool) @{dicePool} (gmdice)'></button> </td>
+                                    <td class="sheet-dark"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/dice/black/blank.png" /><input name="attr_blk" type="number" step="1" max="9" min="-9" value="0"></td>
+                                    <td class="sheet-dark"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/dice/purple/blank.png" /><input name="attr_p" type="number" step="1" max="9" min="-7" value="0"></td>
+                                    <td class="sheet-dark"><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/dice/red/blank.png" /><input name="attr_r" type="number" step="1" max="9" min="-7" value="0"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="sheet-upgrade sheet-light">
+                                        <label data-i18n="upgrade">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Upgrade:
+                                        </label>
+                                        <input name="attr_upgradeAbility" type="number" step="1" max="9" min="0" value="0">
+                                        <input name="attr_downgradeProficiency" type="number" step="1" max="9" min="0" value="0">
+                                        <label data-i18n="downgrade">
+                                            :Downgrade
+                                        </label>
+                                    </td>
+                                    <td class="sheet-force">
+                                        <input type='hidden' name='attr_dicePool' value='@{g}g @{y}y @{p}p @{r}r @{b}b @{blk}blk upgrade(ability|@{upgradeAbility}) downgrade(proficiency|@{downgradeProficiency}) upgrade(difficulty|@{upgradeDifficulty}) downgrade(challenge|@{downgradeChallenge})' />
+                                        <button type='roll' name='roll_ResetDicePool' value='!eed resetdice characterID(@{character_id})'></button>
+                                    </td>
+                                    <td colspan="3" class="sheet-downgrade sheet-dark">
+                                        <label data-i18n="upgrade">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;Upgrade:
+                                        </label>
+                                        <input name="attr_upgradeDifficulty" type="number" step="1" max="9" min="0" value="0">
+                                        <input name="attr_downgradeChallenge" type="number" step="1" max="9" min="0" value="0">
+                                        <label data-i18n="downgrade">
+                                            Downgrade:
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- Dice Pool -->
+                <div class="sheet-clear"></div>
+            </div>
+            <div class="sheet-clear"></div>
+        </div><!-- Dice & Story Point Pools -->
+
+        <div class="sheet-tab-content sheet-tab-character-sheet">
+            <div class="sheet-row">
+                <div class="sheet-small-12 sheet-column">
+                    <h3 class="sheet-section-header" data-i18n="characteristics">Characteristics</h3>
+                    <input name="attr_character-Characteristics" value="1" style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-characteristic-section-toggle" type="checkbox" checked="checked" />
+                    <div class="sheet-characteristic-section">
+                        <table class="sheet-characteristics" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label data-i18n="brawn">Brawn</label>
+                                        <input name='attr_brawn' type="number" max="7" min="1" value="1" class="characteristic" />
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <label data-i18n="agility">Agility</label>
+                                        <input name='attr_agility' type="number" max="7" min="1" value="1" class="characteristic" />
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <label data-i18n="intellect">Intellect</label>
+                                        <input name='attr_intellect' type="number" max="7" min="1" value="1" class="characteristic" />
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <label data-i18n="cunning">Cunning</label>
+                                        <input name='attr_cunning' type="number" max="7" min="1" value="1" class="characteristic" />
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <label data-i18n="willpower">Willpower</label>
+                                        <input name='attr_willpower' type="number" max="7" min="1" value="1" class="characteristic" />
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <label data-i18n="presence">Presence</label>
+                                        <input name='attr_presence' type="number" max="7" min="1" value="1" class="characteristic" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="sheet-clear"></div>
+            </div><!--Characteristics-->
+
+            <input name="attr_character-Stats" value="1" checked="checked" style="width:78px;margin:-13px -20px 0 -62px" class="sheet-toggle sheet-stats-toggle-small sheet-hide" type="checkbox" />
+            <div class="sheet-stats-toggle-small">
+                <div class="sheet-row sheet-section-1">
+                    <div class="sheet-small-12 sheet-column">
+                        <table class="sheet-swsd" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="sheet-label-title" data-i18n="wounds">Wounds</label>
+                                        <input name="attr_wounds_max" type="number" min="1" value="1" />
+                                        <input name="attr_wounds" type="number" min="0" value="0" /><br />
+                                        <label class="sheet-label-threshold" data-i18n="threshold">Threshold</label>
+                                        <label class="sheet-label-current" data-i18n="current">Current</label>
+                                    </td>
+                                    <td>
+                                        <label class="sheet-label-title" data-i18n="soak">Soak</label>
+                                        <input name="attr_soak" type="number" max="49" min="1" value="1" />
+                                    </td>
+                                    <td>
+                                        <label class="sheet-label-title" data-i18n="strain">Strain</label>
+                                        <input name="attr_strain_max" type="number" min="0" value="0" />
+                                        <input name="attr_strain" type="number" min="0" value="0" /><br />
+                                        <label class="sheet-label-threshold" data-i18n="threshold">Threshold</label>
+                                        <label class="sheet-label-current" data-i18n="current">Current</label>
+                                    </td>
+                                    <td>
+                                        <label class="sheet-label-title" data-i18n="defense">Defense</label>
+                                        <input name="attr_rangeddefense" type="number" max="4" min="0" value="0" />
+                                        <input name="attr_meleedefense" type="number" max="4" min="0" value="0" /><br />
+                                        <label class="sheet-label-range" data-i18n="range">Range</label>
+                                        <label class="sheet-label-melee" data-i18n="meleeshort">Melee</label>
+                                    </td>
+                                    <td>
+                                        <label class="sheet-label-title" data-i18n="encum">Encum</label>
+                                        <input name="attr_encumbrance_max" type="number" min="1" value="1" />
+                                        <input name="attr_encumbrancemax" type="hidden" value="@{encumbrance|max}" disabled />
+                                        <input name="attr_encumbrance" type="number" min="0" value="0" /><br />
+                                        <label class="sheet-label-threshold" data-i18n="threshold">Threshold</label>
+                                        <label class="sheet-label-current" data-i18n="current">Current</label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!--Stats-->
+            <div class="sheet-clear"></div>
+            <div class="sheet-m-t-s"></div>
+
+            <input type="radio" name="attr_sheet" class="sheet-tab-new sheet-tab-character" value="1" checked="checked" />
+            <span class="sheet-tab-new" data-i18n="characinfo">&emsp;Character Info&emsp;</span>
+            <input type="radio" name="attr_sheet" class="sheet-tab-new sheet-tab-skills" value="2" />
+            <span class="sheet-tab-new" data-i18n="skillstitle">&emsp; &emsp;Skills&emsp; &emsp;</span>
+            <input type="radio" name="attr_sheet" class="sheet-tab-new sheet-tab-talents" value="3" />
+            <span class="sheet-tab-new" data-i18n="combat">&emsp;Combat&emsp;</span>
+            <input type="radio" name="attr_sheet" class="sheet-tab-new sheet-tab-abilities" value="7" />
+            <span class="sheet-tab-new">&emsp;Talents &amp; Abilities&emsp;</span>
+            <input type="radio" name="attr_sheet" class="sheet-tab-new sheet-tab-spells" value="8" />
+            <span class="sheet-tab-new">&emsp;Spells&emsp;</span>
+            <input type="radio" name="attr_sheet" class="sheet-tab-new sheet-tab-weapons" value="4" />
+            <span class="sheet-tab-new" data-i18n="iteminventory">&emsp;Gear&emsp;</span>
+            <input type="radio" name="attr_sheet" class="sheet-tab-new sheet-tab-critical" value="5" />
+            <span class="sheet-tab-new" data-i18n="critinj">&emsp;Critical Injuries&emsp;</span>
+            <input type="radio" name="attr_sheet" class="sheet-tab-new sheet-tab-notes" value="6" />
+            <span class="sheet-tab-new" data-i18n="notes">&emsp; &emsp;Notes&emsp; &emsp;</span>
+
+            <div class="sheet-tab-content sheet-tab-character">
+                <b data-i18n="character">Character</b><input name="attr_character-Character" value="1" checked="checked" style="width:78px;margin:-13px -20px 0 -62px" class="sheet-toggle sheet-character-toggle-small" type="checkbox" /><span></span>
+                <div class="sheet-character-toggle-small">
+                    <div class="sheet-row">
+                        <h3 class="sheet-section-header" data-i18n="character">Character</h3>
+                        <input name="attr_character-Character" value="1" style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-main-section-toggle" type="checkbox" checked="checked" />
+                        <div class="sheet-main-section">
+                            <div class="sheet-small-12 sheet-column">
+                                <table class="sheet-character" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="15%"><label data-i18n="name:">Name:</label></td>
+                                            <td width="35%"><input type="text" name="attr_name" /></td>
+                                            <td width="15%"><label data-i18n="playername">Player Name:</label></td>
+                                            <td width="35%"><input type="text" name="attr_playername" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="15%"><label data-i18n="species:">Race:</label></td>
+                                            <td width="35%"><input type="text" name='attr_species'></td>
+                                            <td width="15%"><label data-i18n="credits:">Jade:</label></td>
+                                            <td width="35%"><input type="text" name="attr_credits" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="15%"><label data-i18n="career:">Class:</label></td>
+                                            <td width="35%"><input type="text" name='attr_career'></td>
+                                            <td width="15%"><label data-i18n="setting:">Experience Points:</label></td>
+                                            <td width="35%">Total: <input type="number" name="attr_totalxp" /> Available: <input type="number" name="attr_availablexp" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="sheet-clear"></div>
+                            </div><!-- General Info -->
+
+                            <b data-i18n="description">Description</b><input name="attr_character-Description" value="1" checked="checked" style="width:96px;margin:-13px -20px 0 -80px" class="sheet-toggle sheet-description-toggle-small" type="checkbox" /><span></span>
+                            <div class="sheet-description-toggle-small">
+                                <div class="sheet-small-6 sheet-column">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr><th colspan="2" data-i18n="description">Description</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label data-i18n="gender:">Gender:</label></td>
+                                                <td><input type="text" name="attr_chargender" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label data-i18n="age:">Age:</label></td>
+                                                <td><input type="text" name="attr_charager" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label data-i18n="height:">Height:</label></td>
+                                                <td><input type="text" name="attr_charheight" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label data-i18n="build:">Build:</label></td>
+                                                <td><input type="text" name="attr_charbuild" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label data-i18n="hair:">Hair:</label></td>
+                                                <td><input type="text" name="attr_charhair" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label data-i18n="eyes:">Eyes:</label></td>
+                                                <td><input type="text" name="attr_chareyes" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="sheet-small-6 sheet-column">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr><th data-i18n="notablefeatures">Notable Features</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><textarea rows="4" name="attr_charfeatures"></textarea></td></tr>
+                                        </tbody>
+                                    </table>
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr><th data-i18n="other">Other</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td><textarea rows="4" name="attr_charother"></textarea></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div><!-- Description -->
+                            <div class="sheet-clear"></div>
+                            <div class="sheet-section-spacer sheet-description-toggle-small"></div>
+
+                            <b data-i18n="motivations">Motivations</b><input name="attr_character-Motivations" value="1" checked="checked" style="width:96px;margin:-13px -20px 0 -80px" class="sheet-toggle sheet-motivation-toggle-small" type="checkbox" /><span></span>
+                            <div class="sheet-motivation-toggle-small">
+                                <div class="sheet-small-12 sheet-column">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr><th colspan="6" data-i18n="motivations">Motivations</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label data-i18n="desire:">Desire:</label></td>
+                                                <td><input type="text" name='attr_motivation-cat' /></td>
+                                                <td><label data-i18n="description:">Description:</label></td>
+                                                <td><textarea rows="2" name="attr_motivation-desc"></textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label data-i18n="fear:">Fear:</label></td>
+                                                <td><input type="text" name='attr_motivation-cat2' /></td>
+                                                <td><label data-i18n="description:">Description:</label></td>
+                                                <td><textarea rows="2" name="attr_motivation-desc2"></textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label data-i18n="strength:">Strength:</label></td>
+                                                <td><input type="text" name='attr_motivation-cat3' /></td>
+                                                <td><label data-i18n="description:">Description:</label></td>
+                                                <td><textarea rows="2" name="attr_motivation-desc3"></textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label data-i18n="flaw:">Flaw:</label></td>
+                                                <td><input type="text" name='attr_motivation-cat4' /></td>
+                                                <td><label data-i18n="description:">Description:</label></td>
+                                                <td><textarea rows="2" name="attr_motivation-desc4"></textarea></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="sheet-clear"></div>
+                            </div><!-- Motivations -->
+                        </div>
+                        <div class="sheet-clear"></div>
+                    </div>
+                </div><!--Character Info-->
+                <div class="sheet-clear"></div>
+                <div class="sheet-section-spacer sheet-character-toggle-small"></div>
+
+            </div><!-- Character Tab -->
+            <div class="sheet-tab-content sheet-tab-skills">
+                <h3 class="sheet-section-header" data-i18n="skills">Skills</h3>
+                <input name="attr_character-Skills" value="1" style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-skills-section-toggle" type="checkbox" checked="checked" />
+                <div class="sheet-row">
+                    <div class="sheet-small-6 sheet-column">
+                        <div class="sheet-skills-section">
+                            <table class="sheet-skills" cellspacing="0" cellpadding="0" border="0" data-i18n-list="general-skills-list">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="generalskills">General Skills</th>
+                                        <th data-i18n="career">Career</th>
+                                        <th colspan="2" data-i18n="rank">Rank</th>
+                                        <th colspan="2">
+                                            <span style="float:left" data-i18n="modifiers">Modifiers</span>
+                                            <div class="sheet-tips">
+                                                <div class="sheet-help-def sheet-help">
+                                                    <div class="sheet-icon">
+                                                        <span class="sheet-icon-question">?</span>
+                                                    </div>
+                                                    <div class="sheet-help-content" style="margin-left:-225px">
+                                                        <h5 data-i18n="addingdice">Adding Dice</h5>
+                                                        <p data-i18n="addingdicetext">
+                                                            To add additional dice write the number of
+                                                            dice and color letter you want to roll.
+                                                            Additionally you can add some dice symbols
+                                                            to automatically add to the roll.
+                                                        </p>
+                                                        <p data-i18n="example:">Example: <b>1b 1g</b> </p>
+                                                        <p data-i18n="exampletext">
+                                                            b -> Blue = Boost, blk -> BLack = Setback
+                                                            g -> Green = Ability, y -> Yellow = Proficiency
+                                                            p -> Purple = Difficulty, r -> Red = Challenge
+                                                            s = Success, f = Failure, a = Advantage, t = Threat
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div><!-- Modifier Help -->
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-i18n-list-item="alchemy" class="hide-alchemy hide-skill-row">
+                                        <td><label data-i18n="alchemyint">Alchemy (Int)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-alchemy" value="1"/> <span data-i18n="hide">Hide</span></label></td>
+                                        <td><input name='attr_careerskillAlchemy' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankAlchemy" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yAlchemy" value="(((@{intellect} + @{rankAlchemy}) - abs(@{intellect} - @{rankAlchemy})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gAlchemy" value="((((@{intellect} + @{rankAlchemy}) + abs(@{intellect} - @{rankAlchemy})) / 2) - @{yAlchemy})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input"><input type="text" name="attr_diceAlchemy" /></div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Alchemy' value='!eed characterID(@{character_id}) label(skill:Alchemy) @{diceAlchemy} skill(@{rankAlchemy}|@{intellect}|Alchemy) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Alchemy-->
+                                    <tr data-i18n-list-item="astrogation" class="hide-astrogation hide-skill-row">
+                                        <td>
+                                            <label data-i18n="astrogationint">Astrocartography (Int)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-astrogation" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillAstrogation' type="checkbox" value="1"></td>
+                                        <td>
+                                            <input type="number" name="attr_rankAstrogation" max="6" min="0" value="0" />
+                                        </td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yAstrogation" value="(((@{intellect} + @{rankAstrogation}) - abs(@{intellect} - @{rankAstrogation})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gAstrogation" value="((((@{intellect} + @{rankAstrogation}) + abs(@{intellect} - @{rankAstrogation})) / 2) - @{yAstrogation})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceAstrogation" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Alchemy' value='!eed characterID(@{character_id}) label(skill:Astrocartography) @{diceAstrogation} skill(@{rankAstrogation}|@{intellect}|Astrogation) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Astrocartography-->
+                                    <tr data-i18n-list-item="athletics" class="hide-athletics hide-skill-row">
+                                        <td>
+                                            <label data-i18n="athleticsbr">Athletics (Br)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-athletics" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillAthletics' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankAthletics" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yAthletics" value="(((@{brawn} + @{rankAthletics}) - abs(@{brawn} - @{rankAthletics})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gAthletics" value="((((@{brawn} + @{rankAthletics}) + abs(@{brawn} - @{rankAthletics})) / 2) - @{yAthletics})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceAthletics" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Athletics' value='!eed characterID(@{character_id}) label(skill:Athletics) @{diceAthletics} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankAthletics}|@{brawn}|Athletics) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Athletics--><!--All Settings-->
+                                    <tr data-i18n-list-item="computers" class="hide-computers hide-skill-row">
+                                        <td>
+                                            <label data-i18n="computerint">Computers (Int)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-computers" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillComputers' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankComputers" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yComputers" value="(((@{intellect} + @{rankComputers}) - abs(@{intellect} - @{rankComputers})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gComputers" value="((((@{intellect} + @{rankComputers}) + abs(@{intellect} - @{rankComputers})) / 2) - @{yComputers})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceComputers" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Computers' value='!eed characterID(@{character_id}) label(skill:Computers) @{diceComputers} skill(@{rankComputers}|@{intellect}|Computers) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Computers-->
+                                    <tr data-i18n-list-item="cool" class="hide-cool hide-skill-row">
+                                        <td>
+                                            <label data-i18n="coolpr">Cool (Pr)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-cool" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillCool' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankCool" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yCool" value="(((@{presence} + @{rankCool}) - abs(@{presence} - @{rankCool})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gCool" value="((((@{presence} + @{rankCool}) + abs(@{presence} - @{rankCool})) / 2) - @{yCool})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceCool" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Cool' value='!eed characterID(@{character_id}) label(skill:Cool) @{diceCool} skill(@{rankCool}|@{presence}|Cool) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Cool--><!--All Settings-->
+                                    <tr data-i18n-list-item="coordination" class="hide-coordination hide-skill-row">
+                                        <td>
+                                            <label data-i18n="coordinationag">Coordination (Ag)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-coordination" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillCoordination' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankCoordination" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yCoordination" value="(((@{agility} + @{rankCoordination}) - abs(@{agility} - @{rankCoordination})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gCoordination" value="((((@{agility} + @{rankCoordination}) + abs(@{agility} - @{rankCoordination})) / 2) - @{yCoordination})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceCoordination" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Coordination' value='!eed characterID(@{character_id}) label(skill:Coordination) @{diceCoordination} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankCoordination}|@{agility}|Coordination) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Coordination--><!--All Settings-->
+                                    <tr data-i18n-list-item="discipline" class="hide-discipline hide-skill-row">
+                                        <td>
+                                            <label data-i18n="disciplinewill">Discipline (Will)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-discipline" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillDiscipline' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankDiscipline" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yDiscipline" value="(((@{willpower} + @{rankDiscipline}) - abs(@{willpower} - @{rankDiscipline})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gDiscipline" value="((((@{willpower} + @{rankDiscipline}) + abs(@{willpower} - @{rankDiscipline})) / 2) - @{yDiscipline})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceDiscipline" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Discipline' value='!eed characterID(@{character_id}) label(skill:Discipline) @{diceDiscipline} skill(@{rankDiscipline}|@{willpower}|Discipline) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Discipline--><!--All Settings-->
+                                    <tr data-i18n-list-item="driving" class="hide-driving hide-skill-row">
+                                        <td>
+                                            <label data-i18n="drivingag">Driving (Ag)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-driving" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillDriving' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankDriving" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yDriving" value="(((@{agility} + @{rankDriving}) - abs(@{agility} - @{rankDriving})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gDriving" value="((((@{agility} + @{rankDriving}) + abs(@{agility} - @{rankDriving})) / 2) - @{yDriving})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceDriving" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Driving' value='!eed characterID(@{character_id}) label(skill:Driving) @{diceDriving} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankDriving}|@{agility}|Driving) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Driving-->
+                                    <tr data-i18n-list-item="mechanics" class="hide-mechanics hide-skill-row">
+                                        <td>
+                                            <label data-i18n="mechanicsint">Mechanics (Int)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-mechanics" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillMechanics' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankMechanics" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yMechanics" value="(((@{intellect} + @{rankMechanics}) - abs(@{intellect} - @{rankMechanics})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gMechanics" value="((((@{intellect} + @{rankMechanics}) + abs(@{intellect} - @{rankMechanics})) / 2) - @{yMechanics})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceMechanics" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Mechanics' value='!eed characterID(@{character_id}) label(skill:Mechanics) @{diceMechanics} skill(@{rankMechanics}|@{intellect}|Mechanics) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Mechanics--><!--All Settings-->
+                                    <tr data-i18n-list-item="medicine" class="hide-medicine hide-skill-row">
+                                        <td>
+                                            <label data-i18n="medecineint">Medicine (Int)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-medicine" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillMedicine' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankMedicine" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yMedicine" value="(((@{intellect} + @{rankMedicine}) - abs(@{intellect} - @{rankMedicine})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gMedicine" value="((((@{intellect} + @{rankMedicine}) + abs(@{intellect} - @{rankMedicine})) / 2) - @{yMedicine})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceMedicine" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Medicine' value='!eed characterID(@{character_id}) label(skill:Medicine) @{diceMedicine} skill(@{rankMedicine}|@{intellect}|Medicine) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Medicine--><!--All Settings-->
+                                    <tr data-i18n-list-item="operating" class="hide-operating hide-skill-row">
+                                        <td>
+                                            <label data-i18n="operatingint">Operating (Int)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-operating" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillOperating' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankOperating" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yOperating" value="(((@{intellect} + @{rankOperating}) - abs(@{intellect} - @{rankOperating})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gOperating" value="((((@{intellect} + @{rankOperating}) + abs(@{intellect} - @{rankOperating})) / 2) - @{yOperating})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceOperating" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Operating' value='!eed characterID(@{character_id}) label(skill:Operating) @{diceOperating} skill(@{rankOperating}|@{intellect}|Operating) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Operating-->
+                                    <tr data-i18n-list-item="perception" class="hide-perception hide-skill-row">
+                                        <td>
+                                            <label data-i18n="perceptioncun">Perception (Cun)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-perception" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillPerception' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankPerception" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yPerception" value="(((@{cunning} + @{rankPerception}) - abs(@{cunning} - @{rankPerception})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gPerception" value="((((@{cunning} + @{rankPerception}) + abs(@{cunning} - @{rankPerception})) / 2) - @{yPerception})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_dicePerception" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Perception' value='!eed characterID(@{character_id}) label(skill:Perception) @{dicePerception} skill(@{rankPerception}|@{cunning}|Perception) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Perception--><!--All Settings-->
+                                    <tr data-i18n-list-item="piloting" class="hide-piloting hide-skill-row">
+                                        <td>
+                                            <label data-i18n="pilotingag">Piloting (Ag)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-piloting" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillPlanetary' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankPlanetary" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yPlanetary" value="(((@{agility} + @{rankPlanetary}) - abs(@{agility} - @{rankPlanetary})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gPlanetary" value="((((@{agility} + @{rankPlanetary}) + abs(@{agility} - @{rankPlanetary})) / 2) - @{yPlanetary})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_dicePlanetary" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Piloting' value='!eed characterID(@{character_id}) label(skill:Piloting) @{dicePlanetary} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankPlanetary}|@{agility}|PilotingPlanetary) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Piloting-->
+                                    <tr data-i18n-list-item="resilience" class="hide-resilience hide-skill-row">
+                                        <td>
+                                            <label data-i18n="resiliencebr">Resilience (Br)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-resilience" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillResilience' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankResilience" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yResilience" value="(((@{brawn} + @{rankResilience}) - abs(@{brawn} - @{rankResilience})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gResilience" value="((((@{brawn} + @{rankResilience}) + abs(@{brawn} - @{rankResilience})) / 2) - @{yResilience})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceResilience" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Resilience' value='!eed characterID(@{character_id}) label(skill:Resilience) @{diceResilience} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankResilience}|@{brawn}|Resilience) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Resilience--><!--All Settings-->
+                                    <tr data-i18n-list-item="riding" class="hide-riding hide-skill-row">
+                                        <td>
+                                            <label data-i18n="ridingag">Riding (Ag)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-riding" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillRiding' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankRiding" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yRiding" value="(((@{agility} + @{rankRiding}) - abs(@{agility} - @{rankRiding})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gRiding" value="((((@{agility} + @{rankRiding}) + abs(@{agility} - @{rankRiding})) / 2) - @{yRiding})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceRiding" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Riding' value='!eed characterID(@{character_id}) label(skill:Riding) @{diceRiding} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankRiding}|@{agility}|Riding) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Riding-->
+                                    <tr data-i18n-list-item="skulduggery" class="hide-skulduggery hide-skill-row">
+                                        <td>
+                                            <label data-i18n="skulduggerycun">Skulduggery (Cun)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-skulduggery" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillSkulduggery' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankSkulduggery" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_ySkulduggery" value="(((@{cunning} + @{rankSkulduggery}) - abs(@{cunning} - @{rankSkulduggery})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gSkulduggery" value="((((@{cunning} + @{rankSkulduggery}) + abs(@{cunning} - @{rankSkulduggery})) / 2) - @{ySkulduggery})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceSkulduggery" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Skulduggery' value='!eed characterID(@{character_id}) label(skill:Skulduggery) @{diceSkulduggery} skill(@{rankSkulduggery}|@{cunning}|Skulduggery) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Skulduggery--><!--All Settings-->
+                                    <tr data-i18n-list-item="stealth" class="hide-stealth hide-skill-row">
+                                        <td>
+                                            <label data-i18n="stealthag">Stealth (Ag)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-stealth" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillStealth' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankStealth" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yStealth" value="(((@{agility} + @{rankStealth}) - abs(@{agility} - @{rankStealth})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gStealth" value="((((@{agility} + @{rankStealth}) + abs(@{agility} - @{rankStealth})) / 2) - @{yStealth})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceStealth" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Stealth' value='!eed characterID(@{character_id}) label(skill:Stealth) @{diceStealth} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankStealth}|@{agility}|Stealth) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Stealth--><!--All Settings-->
+                                    <tr data-i18n-list-item="streetwise" class="hide-streetwise hide-skill-row">
+                                        <td>
+                                            <label data-i18n="streetwisecun">Streetwise (Cun)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-streetwise" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillStreetwise' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankStreetwise" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yStreetwise" value="(((@{cunning} + @{rankStreetwise}) - abs(@{cunning} - @{rankStreetwise})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gStreetwise" value="((((@{cunning} + @{rankStreetwise}) + abs(@{cunning} - @{rankStreetwise})) / 2) - @{yStreetwise})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceStreetwise" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Streetwise' value='!eed characterID(@{character_id}) label(skill:Streetwise) @{diceStreetwise} skill(@{rankStreetwise}|@{cunning}|Streetwise) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Streetwise--><!--All Settings-->
+                                    <tr data-i18n-list-item="survival" class="hide-survival hide-skill-row">
+                                        <td>
+                                            <label data-i18n="survivalcun">Survival (Cun)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-survival" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillSurvival' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankSurvival" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_ySurvival" value="(((@{cunning} + @{rankSurvival}) - abs(@{cunning} - @{rankSurvival})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gSurvival" value="((((@{cunning} + @{rankSurvival}) + abs(@{cunning} - @{rankSurvival})) / 2) - @{ySurvival})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceSurvival" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Survival' value='!eed characterID(@{character_id}) label(skill:Survival) @{diceSurvival} skill(@{rankSurvival}|@{cunning}|Survival) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Survival--><!--All Settings-->
+                                    <tr data-i18n-list-item="vigilance" class="hide-vigilance hide-skill-row">
+                                        <td>
+                                            <label data-i18n="vigilancewill">Vigilance (Will)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-vigilance" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillVigilance' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankVigilance" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yVigilance" value="(((@{willpower} + @{rankVigilance}) - abs(@{willpower} - @{rankVigilance})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gVigilance" value="((((@{willpower} + @{rankVigilance}) + abs(@{willpower} - @{rankVigilance})) / 2) - @{yVigilance})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceVigilance" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Vigilance' value='!eed characterID(@{character_id}) label(skill:Vigilance) @{diceVigilance} skill(@{rankVigilance}|@{willpower}|Vigilance) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Vigilance--><!--All Settings-->
+                                </tbody>
+                            </table><!--General Skills Section-->
+                        </div>
+                    </div>
+                    <div class="sheet-small-6 sheet-column">
+                        <div class="sheet-skills-section">
+                            <table class="sheet-skills" cellspacing="0" cellpadding="0" border="0" data-i18n-list="knowledge-skills-list">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="magicskills">Magic Skills</th>
+                                        <th data-i18n="career">Career</th>
+                                        <th colspan="2" data-i18n="rank">Rank</th>
+                                        <th colspan="2" data-i18n="mods">Mods</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-i18n-list-item="arcana" class="hide-arcana hide-skill-row">
+                                        <td>
+                                            <label data-i18n="arcanaint">Arcana (Int)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-arcana" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillArcana' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankArcana" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yArcana" value="(((@{intellect} + @{rankArcana}) - abs(@{intellect} - @{rankArcana})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gArcana" value="((((@{intellect} + @{rankArcana}) + abs(@{intellect} - @{rankArcana})) / 2) - @{yArcana})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceArcana" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Arcana' value='!eed characterID(@{character_id}) label(skill:Arcana) @{diceArcana} skill(@{rankArcana}|@{intellect}|Arcana) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Arcana-->
+                                    <tr data-i18n-list-item="divine" class="hide-divine hide-skill-row">
+                                        <td>
+                                            <label data-i18n="divinewill">Divine (Will)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-divine" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillDivine' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankDivine" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yDivine" value="(((@{willpower} + @{rankDivine}) - abs(@{willpower} - @{rankDivine})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gDivine" value="((((@{willpower} + @{rankDivine}) + abs(@{willpower} - @{rankDivine})) / 2) - @{yDivine})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceDivine" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Divine' value='!eed characterID(@{character_id}) label(skill:Divine) @{diceDivine} skill(@{rankDivine}|@{willpower}|Divine) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Divine-->
+                                    <tr data-i18n-list-item="primal" class="hide-primal hide-skill-row">
+                                        <td>
+                                            <label data-i18n="primalcun">Primal (Cun)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-primal" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillPrimal' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankPrimal" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yPrimal" value="(((@{cunning} + @{rankPrimal}) - abs(@{cunning} - @{rankPrimal})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gPrimal" value="((((@{cunning} + @{rankPrimal}) + abs(@{cunning} - @{rankPrimal})) / 2) - @{yPrimal})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_dicePrimal" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Primal' value='!eed characterID(@{character_id}) label(skill:Primal) @{dicePrimal} skill(@{rankPrimal}|@{cunning}|Primal) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Primal-->
+                                </tbody>
+                            </table><!--Magic Skills Section-->
+                            <table class="sheet-skills" cellspacing="0" cellpadding="0" border="0" data-i18n-list="combat-skills-list">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="combatskills">Combat Skills</th>
+                                        <th data-i18n="career">Career</th>
+                                        <th colspan="2" data-i18n="rank">Rank</th>
+                                        <th colspan="2" data-i18n="mods">Mods</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-i18n-list-item="brawl" class="hide-brawl hide-skill-row">
+                                        <td>
+                                            <label data-i18n="brawlbr">Brawl (Br)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-brawl" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillBrawl' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankBrawl" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yBrawl" value="(((@{brawn} + @{rankBrawl}) - abs(@{brawn} - @{rankBrawl})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gBrawl" value="((((@{brawn} + @{rankBrawl}) + abs(@{brawn} - @{rankBrawl})) / 2) - @{yBrawl})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceBrawl" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Brawl' value='!eed characterID(@{character_id}) label(skill:Brawl) @{diceBrawl} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankBrawl}|@{brawn}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Brawl-->
+                                    <tr data-i18n-list-item="gunnery" class="hide-gunnery hide-skill-row">
+                                        <td>
+                                            <label data-i18n="gunneryagi">Gunnery (Agi)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-gunnery" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillGunnery' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankGunnery" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yGunnery" value="(((@{agility} + @{rankGunnery}) - abs(@{agility} - @{rankGunnery})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gGunnery" value="((((@{agility} + @{rankGunnery}) + abs(@{agility} - @{rankGunnery})) / 2) - @{yGunnery})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceGunnery" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Gunnery' value='!eed characterID(@{character_id}) label(skill:Gunnery) @{diceGunnery} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankGunnery}|@{agility}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Gunnery-->
+                                    <tr data-i18n-list-item="melee" class="hide-melee hide-skill-row">
+                                        <td>
+                                            <label data-i18n="meleebr">Melee (Br)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-melee" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillMelee' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankMelee" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yMelee" value="(((@{brawn} + @{rankMelee}) - abs(@{brawn} - @{rankMelee})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gMelee" value="((((@{brawn} + @{rankMelee}) + abs(@{brawn} - @{rankMelee})) / 2) - @{yMelee})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceMelee" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Melee' value='!eed characterID(@{character_id}) label(skill:Melee) @{diceMelee} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankMelee}|@{brawn}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Melee-->
+                                    <tr data-i18n-list-item="meleelight" class="hide-meleelight hide-skill-row">
+                                        <td>
+                                            <label data-i18n="meleelightbr">Melee (Light)(Br)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-meleelight" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillMeleeLight' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankMeleeLight" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yMeleeLight" value="(((@{brawn} + @{rankMeleeLight}) - abs(@{brawn} - @{rankMeleeLight})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gMeleeLight" value="((((@{brawn} + @{rankMeleeLight}) + abs(@{brawn} - @{rankMeleeLight})) / 2) - @{yMeleeLight})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceMeleeLight" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_MeleeLight' value='!eed characterID(@{character_id}) label(skill:MeleeLight) @{diceMeleeLight} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankMeleeLight}|@{brawn}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Melee - Light-->
+                                    <tr data-i18n-list-item="meleeheavy" class="hide-meleeheavy hide-skill-row">
+                                        <td>
+                                            <label data-i18n="meleeheavybr">Melee (Heavy)(Br)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-meleeheavy" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillMeleeHeavy' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankMeleeHeavy" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yMeleeHeavy" value="(((@{brawn} + @{rankMeleeHeavy}) - abs(@{brawn} - @{rankMeleeHeavy})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gMeleeHeavy" value="((((@{brawn} + @{rankMeleeHeavy}) + abs(@{brawn} - @{rankMeleeHeavy})) / 2) - @{yMeleeHeavy})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceMeleeHeavy" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_MeleeHeavy' value='!eed characterID(@{character_id}) label(skill:MeleeHeavy) @{diceMeleeHeavy} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankMeleeHeavy}|@{brawn}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Melee - Heavy-->
+                                    <tr data-i18n-list-item="ranged" class="hide-ranged hide-skill-row">
+                                        <td>
+                                            <label data-i18n="rangedag">Ranged - Light (Ag)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-ranged" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillranged' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankranged" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yRanged" value="(((@{agility} + @{rankRanged}) - abs(@{agility} - @{rankRanged})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gRanged" value="((((@{agility} + @{rankRanged}) + abs(@{agility} - @{rankRanged})) / 2) - @{yRanged})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceRanged" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Ranged' value='!eed characterID(@{character_id}) label(skill:Ranged) @{diceRanged} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankRanged}|@{agility}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Ranged-->
+                                    <tr data-i18n-list-item="rangedlight" class="hide-rangedlight hide-skill-row">
+                                        <td>
+                                            <label data-i18n="rangedlightag">Ranged - Light (Ag)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-rangedlight" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillLight' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankLight" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yLight" value="(((@{agility} + @{rankLight}) - abs(@{agility} - @{rankLight})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gLight" value="((((@{agility} + @{rankLight}) + abs(@{agility} - @{rankLight})) / 2) - @{yLight})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceLight" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Light' value='!eed characterID(@{character_id}) label(skill:Ranged - Light) @{diceLight} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankLight}|@{agility}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Ranged - Light-->
+                                    <tr data-i18n-list-item="rangedheavy" class="hide-rangedheavy hide-skill-row">
+                                        <td>
+                                            <label data-i18n="rangedheavyag">Ranged - Heavy (Ag)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-rangedheavy" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillHeavy' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankHeavy" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yHeavy" value="(((@{agility} + @{rankHeavy}) - abs(@{agility} - @{rankHeavy})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gHeavy" value="((((@{agility} + @{rankHeavy}) + abs(@{agility} - @{rankHeavy})) / 2) - @{yHeavy})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceHeavy" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Heavy' value='!eed characterID(@{character_id}) label(skill:Ranged - Heavy) @{diceHeavy} encum(@{encumbrancemax}|@{encumbrance}) skill(@{rankHeavy}|@{agility}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Ranged - Heavy-->
+                                </tbody>
+                            </table><!--Combat Skills Section-->
+                            <table class="sheet-skills" cellspacing="0" cellpadding="0" border="0" data-i18n-list="knowledge-skills-list">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="socialskills">Social Skills</th>
+                                        <th data-i18n="career">Career</th>
+                                        <th colspan="2" data-i18n="rank">Rank</th>
+                                        <th colspan="2" data-i18n="mods">Mods</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-i18n-list-item="charm" class="hide-charm hide-skill-row">
+                                        <td>
+                                            <label data-i18n="charmpr">Charm (Pr)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-charm" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillCharm' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankCharm" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yCharm" value="(((@{presence} + @{rankCharm}) - abs(@{presence} - @{rankCharm})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gCharm" value="((((@{presence} + @{rankCharm}) + abs(@{presence} - @{rankCharm})) / 2) - @{yCharm})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceCharm" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Charm' value='!eed characterID(@{character_id}) label(skill:Charm) @{diceCharm} skill(@{rankCharm}|@{presence}|Charm) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Charm--><!--All Settings-->
+                                    <tr data-i18n-list-item="coercion" class="hide-coercion hide-skill-row">
+                                        <td>
+                                            <label data-i18n="coercionwill">Coercion (Will)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-coercion" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillCoercion' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankCoercion" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yCoercion" value="(((@{willpower} + @{rankCoercion}) - abs(@{willpower} - @{rankCoercion})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gCoercion" value="((((@{willpower} + @{rankCoercion}) + abs(@{willpower} - @{rankCoercion})) / 2) - @{yCoercion})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceCoercion" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Coercion' value='!eed characterID(@{character_id}) label(skill:Coercion) @{diceCoercion} skill(@{rankCoercion}|@{willpower}|Coercion) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Coercion--><!--All Settings-->
+                                    <tr data-i18n-list-item="deception" class="hide-deception hide-skill-row">
+                                        <td>
+                                            <label data-i18n="deceptioncun">Deception (Cun)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-deception" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillDeception' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankDeception" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yDeception" value="(((@{cunning} + @{rankDeception}) - abs(@{cunning} - @{rankDeception})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gDeception" value="((((@{cunning} + @{rankDeception}) + abs(@{cunning} - @{rankDeception})) / 2) - @{yDeception})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceDeception" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Deception' value='!eed characterID(@{character_id}) label(skill:Deception) @{diceDeception} skill(@{rankDeception}|@{cunning}|Deception) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Deception--><!--All Settings-->
+                                    <tr data-i18n-list-item="leadership" class="hide-leadership hide-skill-row">
+                                        <td>
+                                            <label data-i18n="leadershippre">Leadership (Pr)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-leadership" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillLeadership' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankLeadership" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yLeadership" value="(((@{presence} + @{rankLeadership}) - abs(@{presence} - @{rankLeadership})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gLeadership" value="((((@{presence} + @{rankLeadership}) + abs(@{presence} - @{rankLeadership})) / 2) - @{yLeadership})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceLeadership" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Leadership' value='!eed characterID(@{character_id}) label(skill:Leadership) @{diceLeadership} skill(@{rankLeadership}|@{presence}|Leadership) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Leadership--><!--All Settings-->
+                                    <tr data-i18n-list-item="negotiation" class="hide-negotiation hide-skill-row">
+                                        <td>
+                                            <label data-i18n="negotiationpr">Negotiation (Pr)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-negotiation" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillNegotiation' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankNegotiation" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yNegotiation" value="(((@{presence} + @{rankNegotiation}) - abs(@{presence} - @{rankNegotiation})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gNegotiation" value="((((@{presence} + @{rankNegotiation}) + abs(@{presence} - @{rankNegotiation})) / 2) - @{yNegotiation})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceNegotiation" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Negotiation' value='!eed characterID(@{character_id}) label(skill:Negotiation) @{diceNegotiation} skill(@{rankNegotiation}|@{presence}|Negotiation) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Negotiation--><!--All Settings-->
+                                </tbody>
+                            </table><!--Social Skills Section-->
+                            <table class="sheet-skills" cellspacing="0" cellpadding="0" border="0" data-i18n-list="knowledge-skills-list">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="knowledgeskills">Knowledge Skills</th>
+                                        <th data-i18n="career">Career</th>
+                                        <th colspan="2" data-i18n="rank">Rank</th>
+                                        <th colspan="2" data-i18n="mods">Mods</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-i18n-list-item="knowledge" class="hide-knowledge hide-skill-row">
+                                        <td>
+                                            <label data-i18n="knowledgeint">Knowledge (Int)</label> <label class="hideskills"><input type="checkbox" name="attr_hide-knowledge" value="1"/> <span data-i18n="hide">Hide</span></label>
+                                        </td>
+                                        <td><input name='attr_careerskillKnowledge' type="checkbox" value="1"></td>
+                                        <td><input type="number" name="attr_rankKnowledge" max="6" min="0" value="0" /></td>
+                                        <td>
+                                            <input class="sheet-yd" type="hidden" name="attr_yKnowledge" value="(((@{intellect} + @{rankKnowledge}) - abs(@{intellect} - @{rankKnowledge})) / 2)" disabled><span></span>
+                                            <input class="sheet-gd" type="hidden" name="attr_gKnowledge" value="((((@{intellect} + @{rankKnowledge}) + abs(@{intellect} - @{rankKnowledge})) / 2) - @{yKnowledge})" disabled><span></span>
+                                        </td>
+                                        <td>
+                                            <div class="sheet-dice-icon"></div>
+                                            <div class="sheet-dice-input">
+                                                <input type="text" name="attr_diceKnowledge" />
+                                            </div>
+                                        </td>
+                                        <td><button type='roll' name='roll_Knowledge' value='!eed characterID(@{character_id}) label(skill:Knowledge) @{diceKnowledge} skill(@{rankKnowledge}|@{intellect}) @{dicePool} (gmdice)'></button></td>
+                                    </tr><!--Knowledge-->
+                                </tbody>
+                            </table><!--Knowledge Skills Section-->
+                            <table class="sheet-custome-skills" cellspacing="0" cellpadding="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th data-i18n="customskills">Custom Skills</th>
+                                        <th data-i18n="char">Char</th>
+                                        <th data-i18n="career">Career</th>
+                                        <th colspan="2" data-i18n="rank">Rank</th>
+                                        <th colspan="2" data-i18n="mods">Mods</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <fieldset class="repeating_customSkills">
+                                <table class="sheet-custome-skills" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" name="attr_customskillname1" /></td>
+                                            <td>
+                                                <select name="attr_charcustomskillname1">
+                                                    <option value="@{brawn}" data-i18n="brawn">Brawn</option><!-- encum not working -->
+                                                    <option value="@{agility}" data-i18n="agility">Agility</option>
+                                                    <option value="@{intellect}" data-i18n="intellect">Intellect</option>
+                                                    <option value="@{cunning}" data-i18n="cunning">Cunning</option>
+                                                    <option value="@{willpower}" data-i18n="willpower">Willpower</option>
+                                                    <option value="@{presence}" data-i18n="presence">Presence</option>
+                                                </select>
+                                            </td>
+                                            <td><input name='attr_careerskillcustomskillname1' type="checkbox" value="1"></td>
+                                            <td><input type="number" name="attr_rankcustomskillname1" max="6" min="0" value="0" /></td>
+                                            <td>
+                                                <input class="sheet-yd" type="hidden" name="attr_ycustomskillname1" value="(((@{charcustomskillname1} + @{rankcustomskillname1}) - abs(@{charcustomskillname1} - @{rankcustomskillname1})) / 2)" disabled><span></span>
+                                                <input class="sheet-gd" type="hidden" name="attr_gcustomskillname1" value="((((@{charcustomskillname1} + @{rankcustomskillname1}) + abs(@{charcustomskillname1} - @{rankcustomskillname1})) / 2) - @{ycustomskillname1})" disabled><span></span>
+                                            </td>
+                                            <td>
+                                                <div class="sheet-dice-icon"></div>
+                                                <div class="sheet-dice-input">
+                                                    <input type="text" name="attr_dicecustomskillname1" />
+                                                </div>
+                                            </td>
+                                            <td><button type='roll' name='roll_customskillname1' value='!eed characterID(@{character_id}) label(skill:@{customskillname1}) @{dicecustomskillname1} skill(@{rankcustomskillname1}|@{charcustomskillname1}|@{customskillname1}) @{dicePool} (gmdice)'></button></td>
+                                        </tr><!--Custom Skill 1-->
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="sheet-clear"></div>
+                </div><!--Skills List-->
+            </div><!-- Skills Tab -->
+            <div class="sheet-tab-content sheet-tab-talents">
+                <b data-i18n="initiative">Initiative</b><input name="attr_character-Initiative" value="1" checked="checked" style="width:78px;margin:-13px -20px 0 -62px" class="sheet-toggle sheet-initiative-toggle-small" type="checkbox" /><span></span>
+                <div class="sheet-initiative-toggle-small">
+                    <div class="sheet-row">
+                        <div class="sheet-small-12 sheet-column">
+                            <h3 class="sheet-section-header" data-i18n="initiative">Initiative</h3>
+                            <input name="attr_character-Initiative" value="1" style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-initiative-section-toggle" type="checkbox" checked="checked" />
+                            <div class="sheet-initiative-section">
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td><label data-i18n="whatkindofslot">What kind of Initiative Slot?</label></td>
+                                                        <td><label><span data-i18n="pc">PC</span><input type="radio" name="attr_npc-pc" value="pcinit" checked="checked" /></label></td>
+                                                        <td><label><span data-i18n="npc">NPC</span><input type="radio" name="attr_npc-pc" value="npcinit" /></label></td>
+                                                        <td><label></label></td>
+                                                        <td><label></label></td>
+                                                        <td><label></label></td>
+                                                        <td><label></label></td>
+                                                        <td><label></label></td>
+                                                        <td><label></label></td>
+                                                    </tr>
+                                                </table>
+                                                <table class="sheet-init" cellspacing="0" cellpadding="0" border="0">
+                                                    <tr>
+                                                        <td><label data-i18n="coolifprepared">Cool (if prepared):</label></td>
+                                                        <td>
+                                                            <input class="sheet-yd" type="hidden" name="attr_yCoolInit" value="(@{yCool})" disabled><span></span>
+                                                            <input class="sheet-gd" type="hidden" name="attr_gCoolInit" value="(@{gCool})" disabled><span></span>
+                                                        </td>
+                                                        <td><label data-i18n="modifiers">Modifiers</label><input name='attr_initiativeCoolDice' type="text" /></td>
+                                                        <td>
+                                                            <button type='roll' name='roll_CoolInit' value='!eed @{npc-pc} characterID(@{character_id}) label(skill:Initiative Cool) skill(@{rankCool}|@{presence}) @{initiativeCoolDice} @{dicePool}'></button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><label data-i18n="vigilanceifunexpected">Vigilance (if unexpected):</label></td>
+                                                        <td>
+                                                            <input class="sheet-yd" type="hidden" name="attr_yVigilanceInit" value="(@{yVigilance})" disabled><span></span>
+                                                            <input class="sheet-gd" type="hidden" name="attr_gVigilanceInit" value="(@{gVigilance})" disabled><span></span>
+                                                        </td>
+                                                        <td><label data-i18n="modifiers">Modifiers</label><input name='attr_initiativeVigDice' type="text" /></td>
+                                                        <td>
+                                                            <button type='roll' name='roll_VigilanceInit' value='!eed @{npc-pc} characterID(@{character_id}) label(skill:Initiative Vigilance) skill(@{rankVigilance}|@{willpower}) @{initiativeVigDice} @{dicePool}'></button>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- Initiative -->
+                <div class="sheet-clear"></div>
+                <div class="sheet-section-spacer sheet-initiative-toggle-small"></div>
+
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header" data-i18n="weapons">Weapons</h3>
+                        <input name="attr_character-Weapons" value="1" style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-weapon-section-toggle" type="checkbox" checked="checked" />
+                        <div class="sheet-weapon-section">
+                            <fieldset class="repeating_weapons">
+                                <b data-i18n="weapon">Weapon</b><input name="attr_character-Weapon" value="1" style="width:78px;margin:-13px -20px 0 -62px" class="sheet-toggle sheet-weapon-toggle" type="checkbox" checked="checked" /><span></span>
+                                <div class="sheet-weapon">
+                                    <div class="sheet-row">
+                                        <table class="sheet-weapons" cellspacing="0" cellpadding="0" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <label data-i18n="damage">Damage</label>
+                                                        <input name='attr_damage' type="text" value="0" />
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <label data-i18n="critical">Critical</label>
+                                                        <input name='attr_critical' type="text" value="0" />
+                                                    </td>
+                                                    <td><button type='roll' name='roll_weapon' value='!eed characterID(@{character_id}) label(Weapon:@{weaponmake}|Damage:@{damage}|Critical:@{critical}|Range:@{weaponrange}|Qualities:@{weaponspecial}) @{weapondice} combat(personal) encum(@{encumbrancemax}|@{encumbrance}) @{weaponskill} @{weaponcondition} @{dicePool} (gmdice)'></button></td>
+                                                    <td>
+                                                        <label data-i18n="encum">Encum</label>
+                                                        <input name='attr_weapon-encum' type="text" value="0" />
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <label data-i18n="hp">HP</label>
+                                                        <input name='attr_weapon-hp' type="text" value="0" />
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table><!-- Weapon Top Stats -->
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td><label data-i18n="makemodel:">Weapon Name:</label></td>
+                                                    <td><input name='attr_weaponmake' type="text" /></td>
+                                                    <td><label data-i18n="range:">Range:</label></td>
+                                                    <td>
+                                                        <select name='attr_weaponrange'>
+                                                            <option value="Engaged" data-i18n="engaged">Engaged</option>
+                                                            <option value="Short" data-i18n="short">Short</option>
+                                                            <option value="Medium" data-i18n="medium">Medium</option>
+                                                            <option value="Long" data-i18n="long">Long</option>
+                                                            <option value="Extreme" data-i18n="extreme">Extreme</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label data-i18n="weapontype:">Craftsmanship:</label></td>
+                                                    <td><input name='attr_weapontype' type="text" /></td>
+                                                    <td><label data-i18n="skill:">Skill:</label></td>
+                                                    <td>
+                                                        <select name='attr_weaponskill'>
+                                                            <optgroup label="Combat Skills">
+                                                                <option value="skill(@{rankBrawl}|@{brawn})" data-i18n="brawl">Brawl</option>
+                                                                <option value="skill(@{rankGunnery}|@{agility})" data-i18n="gunnery">Gunnery</option>
+                                                                <option value="skill(@{rankMelee}|@{brawn})" data-i18n="melee">Melee</option>
+                                                                <option value="skill(@{rankMeleeLight}|@{brawn})" data-i18n="meleelight">Melee - Light</option>
+                                                                <option value="skill(@{rankMeleeHeavy}|@{brawn})" data-i18n="meleeheavy">Melee - Heavy</option>
+                                                                <option value="skill(@{rankRanged}|@{agility})" data-i18n="ranged">Ranged</option>
+                                                                <option value="skill(@{rankLight}|@{agility})" data-i18n="rangedlight">Ranged - Light</option>
+                                                                <option value="skill(@{rankHeavy}|@{agility})" data-i18n="rangedheavy">Ranged - Heavy</option>
+                                                            </optgroup>
+                                                            <optgroup label="General Skills">
+                                                                <option value="skill(@{rankMechanics}|@{intellect})" data-i18n="mechanics">Mechanics</option>
+                                                                <option value="skill(@{rankMedicine}|@{intellect})" data-i18n="medecine">Medicine</option>
+                                                                <option value="skill(@{rankResilience}|@{brawn})" data-i18n="resilience">Resilience</option>
+                                                            </optgroup>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label data-i18n="modifiers:">Modifiers:</label></td>
+                                                    <td><input name='attr_weapondice' type="text" /></td>
+                                                    <td><label data-i18n="condition:">Condition:</label></td>
+                                                    <td>
+                                                        <select name='attr_weaponcondition'>
+                                                            <option value="" data-i18n="new">New</option>
+                                                            <option value="1blk" data-i18n="minor">Minor</option>
+                                                            <option value="1p" data-i18n="moderate">Moderate</option>
+                                                            <option value="unusableWeapon" data-i18n="major">Major</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label data-i18n="rarity:">Rarity:</label></td>
+                                                    <td><input name='attr_weapon_rarity' type="number" min="1" max="10" /></td>
+                                                    <td><label data-i18n="value:">Value:</label></td>
+                                                    <td><input name='attr_weapon_value' type="text" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><label data-i18n="qualities:">Qualities:</label></td>
+                                                    <td colspan="3"><textarea rows="2" name="attr_weaponspecial" style="width: 98%"></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table><!-- Weapon Info -->
+                                        <div class="sheet-attachments-wrapper">
+                                            <input type="checkbox" name="attr_weaponattchments" class="sheet-view-attachments" />
+                                            <label class="sheet-view-attachments" data-i18n="viewattachments">View Attachments</label>
+                                            <div class="sheet-clear"></div>
+                                            <table class="sheet-attachments" cellspacing="0" cellpadding="0" border="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th data-i18n="attachmentname">Attachment Name</th>
+                                                        <th data-i18n="hardpoints">Hard Points</th>
+                                                        <th data-i18n="basemodifiers">Base Modifiers</th>
+                                                        <th data-i18n="modifications">Modifications</th>
+                                                        <th data-i18n="booknpage">Book &amp; Page</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input name='attr_weaponattach1' type="text" /></td>
+                                                        <td><input name='attr_weaponattachHP1' type="number" /></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachbase1"></textarea></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachmod1"></textarea></td>
+                                                        <td><input type="text" name="attr_weaponattachbookpage1" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input name='attr_weaponattach2' type="text" /></td>
+                                                        <td><input name='attr_weaponattachHP2' type="number" /></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachbase2"></textarea></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachmod2"></textarea></td>
+                                                        <td><input type="text" name="attr_weaponattachbookpage2" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input name='attr_weaponattach3' type="text" /></td>
+                                                        <td><input name='attr_weaponattachHP3' type="number" /></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachbase3"></textarea></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachmod3"></textarea></td>
+                                                        <td><input type="text" name="attr_weaponattachbookpage3" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input name='attr_weaponattach4' type="text" /></td>
+                                                        <td><input name='attr_weaponattachHP4' type="number" /></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachbase4"></textarea></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachmod4"></textarea></td>
+                                                        <td><input type="text" name="attr_weaponattachbookpage4" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input name='attr_weaponattach5' type="text" /></td>
+                                                        <td><input name='attr_weaponattachHP5' type="number" /></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachbase5"></textarea></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachmod5"></textarea></td>
+                                                        <td><input type="text" name="attr_weaponattachbookpage5" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input name='attr_weaponattach6' type="text" /></td>
+                                                        <td><input name='attr_weaponattachHP6' type="number" /></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachbase6"></textarea></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachmod6"></textarea></td>
+                                                        <td><input type="text" name="attr_weaponattachbookpage6" /></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input name='attr_weaponattach7' type="text" /></td>
+                                                        <td><input name='attr_weaponattachHP7' type="number" /></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachbase7"></textarea></td>
+                                                        <td><textarea rows="3" name="attr_weaponattachmod7"></textarea></td>
+                                                        <td><input type="text" name="attr_weaponattachbookpage7" /></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div><!-- Weapon Attachments -->
+                                    </div>
+                                </div>
+                                <div class="sheet-clear"></div>
+                            </fieldset><!-- Weapon Info -->
+                        </div>
+                    </div>
+                    <div class="sheet-clear"></div>
+                </div><!-- Weapons -->
+            </div><!-- Weapons, Talents, and Powers -->
+            <div class="sheet-tab-content sheet-tab-abilities">
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Heroic Ability</h3><br />
+                        <input name="attr_character-Abilities" value="1" style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-abilities-section-toggle" type="checkbox" checked="checked" />
+                    </div>
+                    <div class="sheet-small-6 sheet-column">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label>Heroic Ability Name:</label></td>
+                                    <td><input type="text" name="attr_heroicAbility_name" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Story Point Cost</label></td>
+                                    <td><input type="number" name="attr_heroicAbility_storyPointCost" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Times Per Day</label></td>
+                                    <td><input type="number" name="attr_heroicAbility_timePerDay" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Duration (Rounds)</label></td>
+                                    <td>
+                                        <input type="number" name="attr_heroicAbility_duration" />
+                                        <span style="float: right;">
+                                            <label style="display: inline;">Ability Points</label>
+                                            <input type="number" name="attr_heroicAbility_abilityPoints" />
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Upgrades</label></td>
+                                    <td><textarea name="attr_heroicAbility_upgrades" rows="3"></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="sheet-small-6 sheet-column">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><label>Primary Effect</label></td>
+                                    <td>
+                                        <input type="text" name="attr_heroicAbility_primaryEffect" />
+                                        <input type="checkbox" name="attr_heroicAbility_improved" /> Improved
+                                        <br />
+                                        <input type="checkbox" name="attr_heroicAbility_supreme" /> Supreme
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Description</label></td>
+                                    <td><textarea name="attr_heroicAbility_description" rows="3"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Origin</label></td>
+                                    <td><textarea name="attr_heroicAbility_origin" rows="3"></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="sheet-clear"></div>
+                    <div class="sheet-m-t-s"></div>
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Talents</h3>
+                        <div class="sheet-talents-section">
+                            <table class="sheet-talents" cellspacing="0" cellpadding="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th style="width:50%">Name</th>
+                                        <th style="width:50%">Summary</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <fieldset class="repeating_talents">
+                                <table class="sheet-talent">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:50%" colspan="6">
+                                                <input type="text" name="attr_talentName" />
+                                            </td>
+                                            <td style="width:50%" rowspan="6">
+                                                <textarea rows="6" name="attr_talentSummary"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label data-i18n="tier:">Tier:</label></td>
+                                            <td><input type="number" name="attr_talentTier" min="1" max="5" /></td>
+                                            <td><label data-i18n="rank:">Rank:</label></td>
+                                            <td><input type="number" name="attr_talentRank" /></td>
+                                            <td colspan="2">
+                                                <div class="sheet-switch">
+                                                    <input type="radio" class="sheet-switch-input-on" name="attr_passiveActive" value="passive" title="Passive" checked="checked" data-i18n-title="passive">
+                                                    <input type="radio" class="sheet-switch-input-off" name="attr_passiveActive" value="active" title="Active" data-i18n-title="active">
+                                                    <span class="switch-selection"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br />
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="sheet-clear"></div>
+                    <div class="sheet-m-t-s"></div>
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Other Abilities</h3>
+                        <div class="sheet-talents-section">
+                            <table class="sheet-talents" cellspacing="0" cellpadding="0" border="0">
+                                <thead>
+                                    <tr>
+                                        <th style="width:50%">Name</th>
+                                        <th style="width:50%">Summary</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <fieldset class="repeating_otherAbilities">
+                                <table class="sheet-talent">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:50%" colspan="6">
+                                                <input type="text" name="attr_otherAbilityName" />
+                                            </td>
+                                            <td style="width:50%" rowspan="6">
+                                                <textarea rows="6" name="attr_otherAbilitySummary"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br />
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="sheet-clear"></div>
+                </div>
+            </div>
+            <div class="sheet-tab-content sheet-tab-spells">
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Spells</h3>
+                    </div>
+                    <fieldset class="repeating_spells">
+                        <div class="sheet-small-6 sheet-column">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><label>Spell Name:</label></td>
+                                        <td><input type="text" name="attr_spell_name" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Difficulty:</label></td>
+                                        <td><input type="text" name="attr_spell_difficulty" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Additional Effects:</label></td>
+                                        <td><textarea name="attr_spell_effects" rows="3"></textarea></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="sheet-small-6 sheet-column">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><label>Spell Type:</label></td>
+                                        <td>
+                                            <select name="attr_spell_type">
+                                                <option value="Attack">Attack</option>
+                                                <option value="Augment">Augment</option>
+                                                <option value="Barrier">Barrier</option>
+                                                <option value="Conjure">Conjure</option>
+                                                <option value="Curse">Curse</option>
+                                                <option value="Dispel">Dispel</option>
+                                                <option value="Heal">Heal</option>
+                                                <option value="Utility">Utility</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Skill:</label></td>
+                                        <td>
+                                            <select name="attr_spell_skill">
+                                                <option value="Alchemy">Alchemy</option>
+                                                <option value="Decking">Decking</option>
+                                                <option value="Runes">Runes</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Description</label></td>
+                                        <td><textarea name="attr_spell_description" rows="3"></textarea></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="sheet-clear"></div>
+                        <div class="sheet-m-t-s"></div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="sheet-tab-content sheet-tab-weapons">
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header" data-i18n="personalarmor">Armour</h3>
+                        <input name="attr_character-Armor" value="1" style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-armor-section-toggle" type="checkbox" checked="checked" />
+                        <div class="sheet-armor-section">
+                            <fieldset class="repeating_armors">
+                                <table class="sheet-weapons" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <label data-i18n="soak">Soak</label>
+                                                <input name='attr_soak' type="text" value="0" />
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <label data-i18n="defense">Defense</label>
+                                                <input name='attr_defense' type="text" value="0" />
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <label data-i18n="encum">Encum</label>
+                                                <input name='attr_armor-encum' type="text" value="0" />
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <label data-i18n="hp">HP</label>
+                                                <input name='attr_armor-hp' type="text" value="0" />
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table><!-- Armor Top Stats -->
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td><label>Name:</label></td>
+                                            <td><input name='attr_armormake' type="text" /></td>
+                                            <td><label data-i18n="condition:">Condition:</label></td>
+                                            <td>
+                                                <select name='attr_armorcondition'>
+                                                    <option value="" data-i18n="new">New</option>
+                                                    <option value="1blk" data-i18n="minor">Minor</option>
+                                                    <option value="1p" data-i18n="moderate">Moderate</option>
+                                                    <option value="unusableWeapon" data-i18n="major">Major</option>
+                                                </select>
+                                            </td>
+                                            <td><label></label></td>
+                                            <td><input name='attr_armortype' type="hidden" disabled /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Craftsmanship:</label></td>
+                                            <td><input name='attr_armor_craftsmanship' type="text" /></td>
+                                            <td><label data-i18n="rarity:">Rarity:</label></td>
+                                            <td><input name='attr_armor_rarity' type="number" min="1" max="10" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label data-i18n="value:">Value:</label></td>
+                                            <td><input name='attr_armor_value' type="text" /></td>
+                                            <td><label data-i18n="qualities:">Qualities:</label></td>
+                                            <td><textarea rows="3" name="attr_armorspecial"></textarea></td>
+                                        </tr>
+                                        <tr><td colspan="4">&nbsp;</td></tr>
+                                    </tbody>
+                                </table><!-- Armor Info -->
+                                <div class="sheet-attachments-wrapper">
+                                    <input type="checkbox" name="attr_armorattchments" class="sheet-view-attachments" />
+                                    <label class="sheet-view-attachments" data-i18n="viewattachments">View Attachments</label>
+                                    <div class="sheet-clear"></div>
+                                    <table class="sheet-attachments" cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr>
+                                                <th data-i18n="attachmentname">Attachment Name</th>
+                                                <th data-i18n="hardpoints">Hard Points</th>
+                                                <th data-i18n="basemodifiers">Base Modifiers</th>
+                                                <th data-i18n="modifications">Modifications</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><input name='attr_armorattch1' type="text" /></td>
+                                                <td><input name='attr_armorattachp1' type="number" /></td>
+                                                <td><textarea rows="3" name="attr_armorattachbase1"></textarea></td>
+                                                <td><textarea rows="3" name="attr_armorattachmod1"></textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name='attr_armorattch2' type="text" /></td>
+                                                <td><input name='attr_armorattachp2' type="number" /></td>
+                                                <td><textarea rows="3" name="attr_armorattachbase2"></textarea></td>
+                                                <td><textarea rows="3" name="attr_armorattachmod2"></textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name='attr_armorattch3' type="text" /></td>
+                                                <td><input name='attr_armorattachp3' type="number" /></td>
+                                                <td><textarea rows="3" name="attr_armorattachbase3"></textarea></td>
+                                                <td><textarea rows="3" name="attr_armorattachmod3"></textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input name='attr_armorattch4' type="text" /></td>
+                                                <td><input name='attr_armorattachp4' type="number" /></td>
+                                                <td><textarea rows="3" name="attr_armorattachbase4"></textarea></td>
+                                                <td><textarea rows="3" name="attr_armorattachmod4"></textarea></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="sheet-clear"></div>
+                                </div><!-- Armor Attachments -->
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="sheet-clear"></div>
+                </div><!-- Armor -->
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Items</h3>
+                        <input name="attr_character-Tools" value="1" style="width: 250px;height: 30px;margin: -44px -20px 0 297px;float:left;" class="sheet-toggle sheet-tools-section-toggle" type="checkbox" checked="checked" />
+                        <div class="sheet-tools-section">
+                            <fieldset class="repeating_tools">
+                                <table class="sheet-tools">
+                                    <tbody>
+                                        <tr>
+                                            <td>Name: <input type="text" name="attr_item_name" style="width: auto;" /></td>
+                                            <td>Quantity: <input type="number" name="attr_item_quantity" /></td>
+                                            <td>Encumbrance: <input type="number" name="attr_item_encumbrance" /></td>
+                                            <td>Value: <input type="text" name="attr_item_value" style="width: auto;" /></td>
+                                            <td>Rarity: <input type="number" name="attr_item_rarity" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="5">Description: <input type="text" name="attr_item_description" /></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br />
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="sheet-clear"></div>
+                </div><!-- Tools -->
+                <div class="sheet-clear"></div>
+            </div><!-- Inventory Tab -->
+            <div class="sheet-tab-content sheet-tab-critical">
+                <div class="sheet-row sheet-show-critical-table">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header" data-i18n="criticalinjuries">Critical Injuries</h3>
+                    </div>
+                    <div class="sheet-small-9 sheet-column">
+                        <div class="sheet-repeating-critical">
+                            <input type="hidden" name="attr_character-critTotal" value="0" />
+                            <fieldset class="repeating_critcharacter">
+                                <input type="hidden" name="attr_character-critId" />
+                                <table class="sheet-critical" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="70%"><input type="text" name="attr_character-critName" readonly="readonly" /></td>
+                                            <td width="30%"><input type="text" name="attr_character-critRange" readonly="readonly" /></td>
+                                            <td class="sheet-crit-dice-bg">
+                                                <input type="hidden" name="attr_character-character-critDice" />
+                                                <input class="sheet-pd" value="4" type="hidden" name="attr_character-critSeverity" /><span></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" rowspan="2"><textarea rows="3" name="attr_character-critSummary" readonly="readonly"></textarea></td>
+                                            <td>
+                                                <label data-i18n="effect:">Effect:</label>
+                                                <div class="sheet-switch">
+                                                    <input type="radio" class="sheet-switch-input-on" name="attr_character-critEffect" value="on" title="On" checked="checked">
+                                                    <input type="radio" class="sheet-switch-input-off" name="attr_character-critEffect" value="off" title="Off">
+                                                    <span class="switch-selection"></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr><td><button type='roll' class="sheet-btn-heal-crit" value="!eed characterID(@{character_id}) crit(heal|character|@{character-critId})" data-i18n="heal">Heal</button></td></tr>
+                                    </tbody>
+                                </table>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="sheet-small-3 sheet-column">
+                        <table class="sheet-roll-critical" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td><label data-i18n="criticalrolloffset:">Critical roll offset:</label></td>
+                                    <td><input type="text" name="attr_character-critAddOffset" value="" /></td>
+                                </tr>
+                                <tr><td colspan="2"><button type='roll' class="sheet-btn-roll-crit" value="!eed characterID(@{character_id}) crit(roll|character)" data-i18n="rollcritical">Roll Critical</button></td></tr>
+                                <tr>
+                                    <td>
+                                        <label data-i18n="criticalnumber:">Critical number:</label>
+                                        <input type="text" name="attr_character-critAddRangeNum" value="" />
+                                    </td>
+                                    <td valign="bottom"><button type='roll' class="sheet-btn-add-crit" value="!eed characterID(@{character_id}) crit(add|character|@{character-critAddRangeNum})" data-i18n="addcritical">Add Critical</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="sheet-clear"></div>
+                </div>
+            </div><!-- Character Critical Injuries -->
+            <div class="sheet-tab-content sheet-tab-notes">
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header" data-i18n="notes">Notes</h3><br />
+                        <table>
+                            <tbody><tr><td><textarea rows="50" name="attr_notes"></textarea></td></tr></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- Notes Tab -->
+        </div><!--Character sheet-->
+        <div class="sheet-clear"></div>
+
+        <br />
+        <hr />
+        <b data-i18n="needhelp">Need help?</b><input name="attr_Need-Help?" value="1" style="width: 96px; margin: -13px -20px 0 -80px;" class="sheet-toggle sheet-footer-toggle" type="checkbox" /><span></span>
+        <div class="sheet-footer">
+            <h4 data-i18n="needhelp">Need help?</h4>
+            <label data-i18n="visitwiki:">Visit the wiki:</label><input disabled="disabled" value="https://https://wiki.roll20.net/Genesys" type="text" /><br />
+            <label data-i18n="visitforum:">Visit the forum:</label><input disabled="disabled"
+                                                                          value="https://app.roll20.net/forum/post/5930268/genesys-rpg-official-character-sheet-thread"
+                                                                          type="text" />
+        </div>
+        <!--Help Links-->
+
+        <rolltemplate class="sheet-rolltemplate-base">
+            <table>
+                <tr><th colspan="2">{{title}} {{#subtitle}}<br /><span class="subheader">{{subtitle}}</span>{{/subtitle}}</th></tr>
+                {{#flavor}}
+                <tr><td colspan="2"><span class="flavor">{{flavor}}</span></td></tr>
+                {{/flavor}}
+                {{#prewide}}
+                <tr><td colspan="2">{{prewide}}</td></tr>
+                {{/prewide}}
+                {{#header}}
+                <tr><td class="tcat-header"><span>{{header}}</span></td><td class="tcat-header"><span>{{item}}</span></td></tr>
+                {{/header}}
+                {{#allprops() title flavor wide roll results subtitle header item prewide wide2 wide3 wide4 wide5}}
+                <tr><td><span class="sheet-tcat">{{key}}</span></td><td>{{value}}</td></tr>
+                {{/allprops() title flavor wide roll results subtitle header item prewide wide2 wide3 wide4 wide5}}
+                {{#wide}}
+                <tr><td colspan="2">{{wide}}</td></tr>
+                {{/wide}}
+                {{#wide2}}
+                <tr><td colspan="2">{{wide2}}</td></tr>
+                {{/wide2}}
+                {{#wide3}}
+                <tr><td colspan="2">{{wide3}}</td></tr>
+                {{/wide3}}
+                {{#wide4}}
+                <tr><td colspan="2">{{wide4}}</td></tr>
+                {{/wide4}}
+                {{#wide5}}
+                <tr><td colspan="2">{{wide5}}</td></tr>
+                {{/wide5}}
+                {{#roll}}
+                <tr><td colspan="2"><span class="tcat" data-i18n="diceroll">Dice Roll</span></td></tr>
+                <tr><td colspan="2">{{roll}}</td></tr>
+                {{/roll}}
+                {{#results}}
+                <tr><td colspan="2"><span class="tcat" data-i18n="results">Results</span></td></tr>
+                <tr><td colspan="2">{{results}}</td></tr>
+                {{/results}}
+            </table>
+        </rolltemplate><!-- Roll Template-Base -->
+
+        <rolltemplate class="sheet-rolltemplate-suggestion">
+            <table>
+                <tr><th colspan="2">{{title}} {{#subtitle}}<br /><span class="subheader">{{subtitle}}</span>{{/subtitle}}</th></tr>
+                {{#flavor}}
+                <tr><td colspan="2"><span class="flavor">{{flavor}}</span></td></tr>
+                {{/flavor}}
+                {{#prewide}}
+                <tr><td colspan="2">{{prewide}}</td></tr>
+                {{/prewide}}
+                {{#header}}
+                <tr><td class="tcat-header"><span>{{header}}</span></td><td class="tcat-header"><span>{{item}}</span></td></tr>
+                {{/header}}
+                {{#allprops() title flavor roll results subtitle header item suggestionsExist success advantage triumph failure threat despair 1advantage1triumph 2advantage1triumph 3advantage1triumph 1triumph 2triumph 1threat1despair 2threat1despair 3threat1despair 1despair 2despair}}
+                <tr><td><span class="sheet-tcat">{{key}}</span></td><td>{{value}}</td></tr>
+                {{/allprops() title flavor roll results subtitle header item suggestionsExist success advantage triumph failure threat despair 1advantage1triumph 2advantage1triumph 3advantage1triumph 1triumph 2triumph 1threat1despair 2threat1despair 3threat1despair 1despair 2despair}}
+                {{#wide}}
+                <tr><td colspan="2">{{wide}}</td></tr>
+                {{/wide}}
+                {{#wide2}}
+                <tr><td colspan="2">{{wide2}}</td></tr>
+                {{/wide2}}
+                {{#wide3}}
+                <tr><td colspan="2">{{wide3}}</td></tr>
+                {{/wide3}}
+                {{#wide4}}
+                <tr><td colspan="2">{{wide4}}</td></tr>
+                {{/wide4}}
+                {{#wide5}}
+                <tr><td colspan="2">{{wide5}}</td></tr>
+                {{/wide5}}
+                {{#roll}}
+                <tr><td colspan="2"><span class="tcat" data-i18n="diceroll">Dice Roll</span></td></tr>
+                <tr><td colspan="2">{{roll}}</td></tr>
+                {{/roll}}
+                {{#results}}
+                <tr><td colspan="2"><span class="tcat" data-i18n="results">Results</span></td></tr>
+                <tr><td colspan="2">{{results}}</td></tr>
+                {{/results}}
+                {{#suggestionsExist}}
+                <tr><td colspan="2"><span class="tcat" data-i18n="spendingsuggestions">Spending Suggestions</span></td></tr>
+                {{/suggestionsExist}}
+                {{#success}}
+                <tr><td><span class="sheet-tcat" data-i18n="success">Success</span></td><td>{{success}}</td></tr>
+                {{/success}}
+                {{#advantage}}
+                <tr><td><span class="sheet-tcat" data-i18n="advantage">Advantage</span></td><td>{{advantage}}</td></tr>
+                {{/advantage}}
+                {{#triumph}}
+                <tr><td><span class="sheet-tcat" data-i18n="triumph">Triumph</span></td><td>{{triumph}}</td></tr>
+                {{/triumph}}
+                {{#failure}}
+                <tr><td><span class="sheet-tcat" data-i18n="failure">Failure</span></td><td>{{failure}}</td></tr>
+                {{/failure}}
+                {{#threat}}
+                <tr><td><span class="sheet-tcat" data-i18n="threat">Threat</span></td><td>{{threat}}</td></tr>
+                {{/threat}}
+                {{#despair}}
+                <tr><td><span class="sheet-tcat" data-i18n="despair">Despair</span></td><td>{{despair}}</td></tr>
+                {{/despair}}
+                {{#1advantage1triumph}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/advantage.png" title="advantage" height="20" width="20" /> or <img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/triumph.png" title="triumph" height="20" width="20" /></td><td>{{1advantage1triumph}}</td></tr>
+                {{/1advantage1triumph}}
+                {{#2advantage1triumph}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/advantage.png" title="advantage" height="20" width="20" /><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/advantage.png" title="advantage" height="20" width="20" /> or <img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/triumph.png" title="triumph" height="20" width="20" /></td><td>{{2advantage1triumph}}</td></tr>
+                {{/2advantage1triumph}}
+                {{#3advantage1triumph}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/advantage.png" title="advantage" height="20" width="20" /><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/advantage.png" title="advantage" height="20" width="20" /><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/advantage.png" title="advantage" height="20" width="20" /> or <img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/triumph.png" title="triumph" height="20" width="20" /></td><td>{{3advantage1triumph}}</td></tr>
+                {{/3advantage1triumph}}
+                {{#1triumph}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/triumph.png" title="triumph" height="20" width="20" /></td><td>{{1triumph}}</td></tr>
+                {{/1triumph}}
+                {{#2triumph}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/triumph.png" title="triumph" height="20" width="20" /><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/triumph.png" title="triumph" height="20" width="20" /></td><td>{{2triumph}}</td></tr>
+                {{/2triumph}}
+                {{#1threat1despair}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/threat.png" title="threat" height="20" width="20" /> or <img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/despair.png" title="despair" height="20" width="20" /></td><td>{{1threat1despair}}</td></tr>
+                {{/1threat1despair}}
+                {{#2threat1despair}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/threat.png" title="threat" height="20" width="20" /><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/threat.png" title="threat" height="20" width="20" /> or <img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/despair.png" title="despair" height="20" width="20" /></td><td>{{2threat1despair}}</td></tr>
+                {{/2threat1despair}}
+                {{#3threat1despair}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/threat.png" title="threat" height="20" width="20" /><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/threat.png" title="threat" height="20" width="20" /><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/threat.png" title="threat" height="20" width="20" /> or <img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/despair.png" title="despair" height="20" width="20" /></td><td>{{3threat1despair}}</td></tr>
+                {{/3threat1despair}}
+                {{#1despair}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/despair.png" title="despair" height="20" width="20" /></td><td>{{1despair}}</td></tr>
+                {{/1despair}}
+                {{#2despair}}
+                <tr><td><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/despair.png" title="despair" height="20" width="20" /><img src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/symbol/despair.png" title="despair" height="20" width="20" /></td><td>{{2despair}}</td></tr>
+                {{/2despair}}
+            </table>
+        </rolltemplate><!-- Roll Template-Suggestions -->
+    </body>
+</html>
