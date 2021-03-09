@@ -454,10 +454,10 @@ input.sheet-tab-new {
 }
 
 span.sheet-tab-new {
-    border: 1px solid #51597f;
+    border: 1px solid #c15327;
     background-color: white;
     border-radius: 4px;
-    color: #51597f;
+    color: #c15327;
     cursor: pointer;
     font-size: 13px;
     font-weight: bold;
@@ -470,7 +470,7 @@ span.sheet-tab-new {
 }
 
 input.sheet-tab-new:checked + span {
-    background: #51597f none repeat scroll 0 0;
+    background: #c15327 none repeat scroll 0 0;
     border-radius: 4px;
     font-weight: bold;
     color: white;
@@ -739,7 +739,7 @@ input[type=number].sheet-characteristic {
     border-color: transparent;
     font-size: 16pt;
     width: 2.5em;
-    margin-top: 0.05em;
+    margin-top: 10px;
 }
 
 .charsheet input[type=text],
@@ -775,14 +775,14 @@ input[type=number].sheet-characteristic {
 
 .charsheet table {
     width: 100%;
-    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/grey.jpg'); /* Grey Background */
+    background-image: url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/4f3096fc8056b90a341ab5ba7d3977f9bab6b3cc/Assets/parchment.jpg'); /* Parchment Background */
     background-position: center center;
     background-repeat: repeat;
 }
 
 .charsheet table tr th {
     text-align: left;
-    background: #444;
+    background: #603e1b;
     color: #f3f3f3;
     padding: 3px 5px;
 }
@@ -832,7 +832,7 @@ input[type=number].sheet-characteristic {
 }
 
 .charsheet h3 {
-    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/border/stretched_hexagon.png'), url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/border/grey_title_lines.png'); /* Stretched hexagon, Grey Title lines*/
+    background-image: url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/main/Assets/stretched_hexagon.png'), url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/main/Assets/brown_title_lines.png'); /* Stretched hexagon, Brown Title lines*/
     background-position: center top, center 5px;
     background-repeat: no-repeat, repeat-x;
     line-height: 40px;
@@ -947,7 +947,7 @@ input[type=number].sheet-characteristic {
 /* ------------------------------------------------- Soak, Wounds... */
 
 .sheet-swsd {
-    background: url('https://github.com/Roll20/roll20-character-sheets/blob/master/Genesys-RPG/assets/background/border/character.png') center -2px no-repeat; /* Character Sheet Stat connecting sword title - Border */
+    background: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/white_space.png') center -2px no-repeat;
 }
 
 .sheet-swsd tr:hover td {
@@ -973,7 +973,7 @@ input[type=number].sheet-characteristic {
 .sheet-swsd td:nth-child(3),
 .sheet-swsd td:nth-child(4),
 .sheet-swsd td:nth-child(5) {
-    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/border/threshold_current.png');
+    background-image: url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/main/Assets/threshold_current.png');
     background-position: center top;
     background-repeat: no-repeat;
     width: 153px;
@@ -989,7 +989,7 @@ input[type=number].sheet-characteristic {
 
 .sheet-swsd tr:nth-child(2) td:nth-child(1),
 .sheet-beast tr:first-child td:nth-child(5) {
-    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/border/single_digit.png'); /*Single Digit - Border*/
+    background-image: url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/main/Assets/single_digit.png'); /*Single Digit - Border*/
     background-position: center top;
     background-repeat: no-repeat;
     width: 99px;
@@ -1083,7 +1083,7 @@ label.sheet-label-current {
 .sheet-destiny td:nth-child(2),
 .sheet-destiny td:nth-child(4) {
     text-align: center;
-    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/border/single_digit.png'); /*Single Digit - Border*/
+    background-image: url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/main/Assets/single_digit.png'); /*Single Digit - Border*/
     background-position: center top;
     background-repeat: no-repeat;
     width: 99px;
@@ -1128,7 +1128,7 @@ label.sheet-label-current {
 .sheet-characteristics td:nth-child(11),
 .sheet-characteristics td:nth-child(13) {
     text-align: center;
-    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/border/single_digit.png'); /* Single Digit - Border */
+    background-image: url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/main/Assets/single_digit.png'); /* Single Digit - Border */
     background-position: center top;
     background-repeat: no-repeat;
     width: 99px;
@@ -1150,7 +1150,8 @@ label.sheet-label-current {
 
 .sheet-characteristics label {
     text-align: center;
-    color: #fff;
+    /*color: #e26f42;*/
+    text-shadow: 0 0 2px #FFF;
     font-weight: bold;
     line-height: 15px;
     padding-bottom: 4px;
@@ -1574,7 +1575,7 @@ th .sheet-help-content {
 .sheet-weapons td:nth-child(6),
 .sheet-weapons td:nth-child(8) {
     text-align: center;
-    background-image: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/border/single_digit.png'); /*Single Digit - Border*/
+    background-image: url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/main/Assets/single_digit.png'); /*Single Digit - Border*/
     background-position: center top;
     background-repeat: no-repeat;
     width: 99px;
@@ -1583,7 +1584,7 @@ th .sheet-help-content {
 }
 
 .sheet-weapons {
-    background: url('https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Genesys-RPG/assets/background/border/title_double_line.png') center 45px repeat-x; /* Title Double Line */
+    background: url('https://raw.githubusercontent.com/Corey0001/Genesys-RPG-Character-Sheet/main/Assets/title_double_line.png') center 45px repeat-x; /* Title Double Line */
 }
 
 .sheet-weapons tr td {
@@ -2105,7 +2106,7 @@ input.sheet-footer-toggle ~ div.sheet-footer {
 }
 
 .repcontrol_add, .repcontrol_edit, .repcontrol_del, .repcontrol_move {
-    background: #444;
+    background: #c15327;
     color: #f3f3f3;
 }
 
